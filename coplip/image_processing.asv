@@ -14,5 +14,4 @@ LMS(:,:,2)=M;
 LMS(:,:,3)=S;
 %LMS 的彩色空间分量L、M、S转化为l、m、s分量
 l_ms=255-LMS;
-a=im2double(255)-(im2double(L)).^(40/61).*(im2double(M)).^(20/61).*(im2double(S)).^(1/61);
-figure,imshow(a);
+a=255-(im2double(L))^(40/61)*(im2double(M))^(20/61)*(im2double(S))^(1/61);
