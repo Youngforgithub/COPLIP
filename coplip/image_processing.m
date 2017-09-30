@@ -12,7 +12,12 @@ S=0.0241.*Lena(:,:,1)+0.1288.*Lena(:,:,2)+0.8444.*Lena(:,:,3);
 LMS(:,:,1)=L;
 LMS(:,:,2)=M;
 LMS(:,:,3)=S;
-%LMS 的彩色空间分量L、M、S转化为l、m、s分量
+%LMS 的彩色空间分量L、M、S转化为彩色色调函数分量分量
 l_ms=255-LMS;
-a=im2double(255)-(im2double(L)).^(40/61).*(im2double(M)).^(20/61).*(im2double(S)).^(1/61);
+a=1-(im2double(L)).^(40/61).*(im2double(M)).^(20/61).*(im2double(S)).^(1/61);
 figure,imshow(a);
+r=1-(im2double(L)).^1.*(im2double(M)).^(-12/11).*(im2double(S)).^(1/11);
+figure,imshow(r);
+y=1-(im2double(L)).^(1/9).*(im2double(M)).^(1/9).*(im2double(S)).^(-2/9);
+figure,imshow(y);
+
